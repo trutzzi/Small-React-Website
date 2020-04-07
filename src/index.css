@@ -1,0 +1,314 @@
+/* Global  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  background: #d3d3d3;
+  font-family: 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 25px 0;
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 1120px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.page h2 {
+  font-size: 42px;
+  padding: 25px 0 50px 0;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+@media screen and (max-width: 764px) {
+  .page h2 {
+    font-size: 34px;
+  }
+}
+
+.title, .price {
+  display: inline-block;
+  padding: 5px 0;
+  margin-right: 15px;
+}
+
+.price {
+  text-align: right;
+  float: right;
+  color: green;
+}
+
+/* Navigation */
+
+nav {
+  background: #c0c0c0;
+}
+
+nav .container {
+  position: relative;
+}
+
+nav .menu-desktop ul {
+  list-style-type: none;
+  margin: 0;
+  display: inline-block;
+}
+
+nav .menu-desktop li {
+  color: #333;
+  display: inline-block;
+  padding: 25px 15px;
+  margin-right: 10px;
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
+}
+
+nav .menu-desktop .selected li::after {
+  font-weight: bold;
+  position: absolute;
+  top: 100%;
+  height: 5px;
+  width: 100%;
+  left: 0;
+  background: #333;
+  content: '';
+}
+
+nav .menu-mobile ul {
+  list-style-type: none;
+  margin: 0;
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav .menu-mobile li {
+  color: #333;
+  display: block;
+  padding: 10px 10px;
+  border-bottom: 1px solid #dedede;
+}
+
+.menu-toggle {
+  display: block;
+  padding: 15px 10px;
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 764px) {
+  .menu-toggle {
+    display: block;
+  }
+  .menu-desktop {
+    display: none;
+  }
+  .menu-mobile.active {
+    display: block;
+  }
+}
+
+nav .menu-mobile .selected li {
+  font-weight: bold;
+}
+
+nav .menu-mobile a:last-child>li {
+  border-bottom: none;
+}
+
+.store-items .item {
+  padding: 10px 0;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.store-items .item:last-child {
+  border-bottom: none;
+}
+
+.store-items .total {
+  text-align: right;
+  display: block;
+  margin: 10px 0;
+}
+
+.store-items .title {
+  font-size: 24px;
+}
+
+.store-items .control {
+  margin: 5px 0;
+}
+
+.store-items .control span {
+  cursor: pointer;
+  color: #333;
+  margin-right: 10px;
+}
+
+.store-items .control span:hover {
+  color: #000000;
+}
+
+.cart-toggle {
+  padding: 25px 0;
+  text-align: right;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.shopping-cart {
+  position: absolute;
+  display: inline-block;
+  right: 20px;
+  min-width: 200px;
+  top: 0;
+}
+
+.shopping-cart.active .list:after {
+  right: 25px;
+  top: -10px;
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+.shopping-cart.active .list:before {
+  right: 23px;
+  top: -12px;
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 12px 12px 12px;
+  border-color: transparent transparent grey transparent;
+}
+
+.cart {
+  position: absolute;
+  right: 0;
+}
+
+.shopping-cart .item {
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.shopping-cart .item:last-of-type {
+  border-bottom: none;
+}
+
+.shopping-cart .total {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  padding: 10px 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.shopping-cart .rest {
+  cursor: pointer;
+  text-align: right;
+  display: block;
+  font-size: 14px;
+}
+
+.shopping-cart .list {
+  display: none;
+}
+
+.shopping-cart.active .list {
+  display: block;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid grey;
+  z-index: 99;
+  position: relative;
+  margin-top: 70px;
+  border-radius: 10px;
+}
+
+.header {
+  overflow: hidden;
+  position: relative;
+  height: 350px;
+  margin-top: 5px;
+  background-image: url('/banner.jpg');
+  background-size: cover;
+}
+
+@media screen and (max-width: 764px) {
+  .header {
+    margin-top: 0;
+  }
+}
+
+.header img {
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: auto;
+}
+
+.header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.header .container h2 {
+  font-size: 54px;
+  padding-top: 125px;
+  text-align: center;
+}
+
+button, button:focus {
+  min-width: 180px;
+  background: #000000;
+  padding: 12px 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  appearance: none;
+  border: 3px solid #000000;
+  -webkit-appearance: none;
+  vertical-align: middle;
+}
+
+margin: 10px 0;
+button:hover {
+  background: #ffffff;
+  color: #333333;
+}
+
+.user_detail {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
