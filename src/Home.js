@@ -1,17 +1,11 @@
 import React from 'react';
 import Banner from './Banner'
-import { signInWithGoogle, signOutWithGoogle } from './firebase/firebase.utils'
 function Home(props) {
     return (
         <React.Fragment>
             <Banner page={props.page} />
             <div className="page">
                 <div className="container">
-                    {!props.isUserLoged ?
-                        <button onClick={signInWithGoogle}>Sign in with google</button>
-                        :
-                        <button onClick={signOutWithGoogle}>Sign Out</button>
-                    }
                     <h3>Tehnologies</h3>
                     <p>Tehnologies that i used to build this website project</p>
                     <br />React JS

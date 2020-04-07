@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import nextId from "react-id-generator";
 import { Reset, ResetAll } from './redux/storeActions';
-import { signInWithGoogle, signOutWithGoogle } from './firebase/firebase.utils'
 function Header(props) {
     const [cart, setChart] = useState(false)
     const [mobileToggle, setMobileToggle] = useState(false)
@@ -13,6 +12,7 @@ function Header(props) {
     }
     return (
         <div>
+            <div className="disclaimer">This is a demo website, any prodcuts or delivery aren't processed!</div>
             <nav>
                 <div className="container">
                     <ul className="menu-desktop">
@@ -28,11 +28,6 @@ function Header(props) {
                         <NavLink activeClassName="selected" to="/contact">
                             <li>Contact</li>
                         </NavLink>
-                        {!props.userLoged ?
-                            <li onClick={signInWithGoogle}>Sign In</li>
-                            :
-                            <li onClick={signOutWithGoogle}>Sign Out</li>
-                        }
                     </ul>
                     <div className="mobile">
                         <span onClick={() => setMobileToggle(!mobileToggle)} className="menu-toggle">{mobileToggle ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}</span>
@@ -49,25 +44,10 @@ function Header(props) {
                             <NavLink activeClassName="selected" to="/contact">
                                 <li>Contact</li>
                             </NavLink>
-                            {!props.userLoged ?
-                                <li onClick={signInWithGoogle}>Sign In</li>
-                                :
-                                <li onClick={signOutWithGoogle}>Sign Out</li>
-                            }
                         </ul>
                     </div>
                     <div className={cart ? 'shopping-cart active' : 'shopping-cart'} >
                         <div className="cart">
-                            <span className="user_detail">
-                                {
-                                    props.userLoged ?
-                                        <p>Welcome,<br />
-                                            {props.userLoged.displayName}</p>
-                                        :
-                                        <p>
-                                Sign in,<br/> buddy</p>
-                                }
-                            </span>
                             <span onClick={toggleCart} className="cart-toggle">
                                 <span className="fa fa-shopping-cart"></span> Store ({selected.length})
                         </span>

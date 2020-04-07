@@ -6,6 +6,23 @@
   box-sizing: border-box;
 }
 
+.disclaimer {
+  padding: 10px;
+  background: #cecb33;
+  text-align: center;
+}
+
+a {
+  color: #9dbeb7;
+  font-weight: 600;
+  padding: 10px;
+  text-decoration: none;
+}
+
+p {
+  color: #333;
+}
+
 .center {
   text-align: center;
 }
@@ -33,6 +50,27 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #c0c0c0;
 }
 
+.page {
+  background: #fff;
+  padding: 25px 0;
+}
+
+.item {
+  position: relative;
+}
+
+.item .image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.item .image img {
+  height: 164px;
+  width: auto;
+}
+
 @media screen and (max-width: 764px) {
   .page h2 {
     font-size: 34px;
@@ -41,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .title, .price {
   display: inline-block;
+  padding-left: 184px;
   padding: 5px 0;
   margin-right: 15px;
 }
@@ -49,6 +88,12 @@ h1, h2, h3, h4, h5, h6 {
   text-align: right;
   float: right;
   color: green;
+}
+
+.list .price {
+  float: unset;
+  display: block;
+  text-align: right;
 }
 
 /* Navigation */
@@ -138,7 +183,7 @@ nav .menu-mobile a:last-child>li {
 }
 
 .store-items .item {
-  padding: 10px 0;
+  padding: 25px 0;
   border-bottom: 1px solid #c0c0c0;
 }
 
@@ -154,10 +199,28 @@ nav .menu-mobile a:last-child>li {
 
 .store-items .title {
   font-size: 24px;
+  padding-left: 184px;
+}
+
+@media screen and (max-width: 764px) {
+  .store-items .title {
+    height: 60px;
+    font-size: 18px;
+  }
 }
 
 .store-items .control {
   margin: 5px 0;
+  padding-left: 184px;
+}
+
+.store-items .description>p {
+  margin: 5px 0;
+  padding-left: 184px;
+  height: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .store-items .control span {
@@ -167,7 +230,7 @@ nav .menu-mobile a:last-child>li {
 }
 
 .store-items .control span:hover {
-  color: #000000;
+  color: #9dbeb7;
 }
 
 .cart-toggle {
@@ -215,6 +278,14 @@ nav .menu-mobile a:last-child>li {
   right: 0;
 }
 
+.list .title {
+  white-space: nowrap;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
 .shopping-cart .item {
   border-bottom: 1px solid #d3d3d3;
 }
@@ -244,10 +315,12 @@ nav .menu-mobile a:last-child>li {
 }
 
 .shopping-cart.active .list {
+  margin-right: -20px;
   display: block;
   padding: 10px;
   background: #ffffff;
   border: 1px solid grey;
+  max-width: 320px;
   z-index: 99;
   position: relative;
   margin-top: 70px;
@@ -284,6 +357,7 @@ nav .menu-mobile a:last-child>li {
 .header .container h2 {
   font-size: 54px;
   padding-top: 125px;
+  color: #9dbeb7;
   text-align: center;
 }
 
